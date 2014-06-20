@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2013 StubHub Inc. All rights reserved.
- */
 package com.github.coe.gensite.jaxrs.model;
 
 import org.codehaus.jackson.map.AnnotationIntrospector;
