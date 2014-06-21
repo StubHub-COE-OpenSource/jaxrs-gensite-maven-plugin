@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
 
 import com.github.coe.gensite.jaxrs.model.ServiceDescription;
-import com.github.frtu.simple.helpers.reflect.ClassPathScanningAnnotationProvider;
+import com.github.frtu.simple.infra.reflect.ClassPathScanningAnnotationProvider;
 
 /**
  * This is the Classpath scanner for all annotation Class<? extends Annotation> that is passed on parameter.

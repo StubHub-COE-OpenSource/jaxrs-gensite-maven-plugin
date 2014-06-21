@@ -12,7 +12,7 @@ import org.springframework.util.ReflectionUtils.MethodCallback;
 import com.github.coe.gensite.jaxrs.model.MessageDescription;
 import com.github.coe.gensite.jaxrs.model.OperationDescription;
 import com.github.coe.gensite.jaxrs.model.ServiceDescription;
-import com.github.frtu.simple.helpers.reflect.ReflectionMapperUtil;
+import com.github.frtu.simple.infra.reflect.ReflectionMapperUtil;
 
 /**
  * This is the class where Annotation are retrieved from the Class or Method source and store respectively into
