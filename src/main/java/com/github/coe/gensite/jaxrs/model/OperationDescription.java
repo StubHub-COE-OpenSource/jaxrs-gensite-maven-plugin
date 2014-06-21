@@ -4,24 +4,25 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.jaxrs.model.wadl.Description;
 
-public class OperationDescription {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@XmlRootElement(name = "operation")
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(propOrder = { "methodSourceName", "descriptionTitle", "descriptionValue", "pathValue", "consumeValues", "produceValues" })
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class OperationDescription extends AbstractElementDescription {
     public Method methodSource;
-
-    public Description description;
-    public Path path;
-    public Produces produces;
-    public Consumes consumes;
 
     public GET get;
     public POST post;
@@ -38,12 +39,12 @@ public class OperationDescription {
         inputMessageDescriptions.add(parameterType);
     }
 
-    public Method getMethodSource() {
-        return methodSource;
-    }
-
     public void setMethodSource(Method methodSource) {
         this.methodSource = methodSource;
+    }
+
+    public String getMethodSourceName() {
+        return methodSource.getName();
     }
 
     public List<MessageDescription> getInputMessageDescriptions() {

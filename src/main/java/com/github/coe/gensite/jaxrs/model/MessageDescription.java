@@ -8,9 +8,10 @@ import javax.xml.bind.annotation.XmlType;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.cxf.jaxrs.model.wadl.Description;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-@XmlRootElement(name = "project")
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@XmlRootElement(name = "message")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = { "id", "name", "description" })
 @JsonIgnoreProperties(ignoreUnknown = true)
